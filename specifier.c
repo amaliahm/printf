@@ -66,7 +66,7 @@ int get_print_func(char *s, va_list ap, parameters_t *par)
  * Return: int
 */
 
-int get_flag(char *s, parameters_t *params)
+int get_flag(char *s, parameters_t *par)
 {
 	int i = 0;
 
