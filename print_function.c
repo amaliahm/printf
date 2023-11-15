@@ -37,6 +37,7 @@ int print_char(va_list ap, parameters_t *par)
 int print_int(va_list ap, parameters_t *par)
 {
 	long l;
+
 	if (par->l_modifier)
 		l = va_arg(ap, long);
 	else if (par->h_modifier)
@@ -65,9 +66,12 @@ int print_string(va_list ap, parameters_t *par)
 
 	(void)par;
 
-	switch((int)(!str))
-	case 1:
-		str = NULL_STRING;
+	switch ((int)(!str))
+	{
+		case 1:
+			str = NULL_STRING;
+			break;
+	}
 	j = pad = _strlen(str);
 	if (par->precision < pad)
 		j = pad = par->precision;
@@ -135,7 +139,7 @@ int print_S(va_list ap, parameters_t *par)
 		{
 			s += _putchar('\\');
 			s += _putchar('x');
-			hex = convert (*str, 16, 0, par);
+			hex = convert(*str, 16, 0, par);
 			if (!hex[1])
 				s += _putchar('0');
 			s += _puts(hex);
