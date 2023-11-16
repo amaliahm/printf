@@ -88,7 +88,7 @@ int print_string(va_list ap, parameters_t *par)
 	if (!par->minus_flag)
 	{
 		if (par->precision != UNIT_MAX)
-			for (i = 0, i < pad, i++)
+			for (i = 0; i < pad; i++)
 				s += _putchar(*str++);
 		else
 			s += _puts(str);

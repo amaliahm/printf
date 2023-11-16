@@ -54,7 +54,7 @@ int print_HEX(va_list ap, parameters_t *par)
 	else
 		l = (unsigned int)va_arg(ap, unsigned int);
 	str = convert(l, 16, CONVERT_UNSIGNED, par);
-	if (par->hashtagflag && l)
+	if (par->hashtag_flag && l)
 	{
 		*--str = 'X';
 		*--str = 'O';
@@ -78,7 +78,7 @@ int print_binary(va_list ap, parameters_t *par)
 	char *str = convert(n, 2, CONVERT_UNSIGNED, par);
 	int c = 0;
 
-	if (par->hashtagflag && n)
+	if (par->hashtag_flag && n)
 		*--str = 'O';
 	par->unsign = 1;
 	return (c += print_number(str, par));
@@ -93,7 +93,7 @@ int print_binary(va_list ap, parameters_t *par)
  * Return: int
 */
 
-int print_octal(va_list ap, parameters_t, *par)
+int print_octal(va_list ap, parameters_t *par)
 {
 	unsigned long l;
 	char *str;

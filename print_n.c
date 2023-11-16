@@ -70,7 +70,7 @@ int print_number(char *str, parameters_t *par)
  * Return: int
 */
 
-int print_number_right_shift(char *str, parameters_t par)
+int print_number_right_shift(char *str, parameters_t *par)
 {
 	unsigned int n = 0, neg, neg2, i = _strlen(str);
 	char pad_char = ' ';
@@ -87,8 +87,8 @@ int print_number_right_shift(char *str, parameters_t par)
 		i++;
 	if (neg && pad_char == '0')
 		n += _putchar('-');
-	if (par->plus_flag && !neg2 && pad_char == '0' aa !par->unsign)
-		n += _pucthar('+');
+	if (par->plus_flag && !neg2 && pad_char == '0' && !par->unsign)
+		n += _putchar('+');
 	else if (!par->plus_flag && par->space_flag && !neg2 &&
 			!par->unsign && par->zero_flag)
 		n += _putchar(' ');
@@ -112,7 +112,7 @@ int print_number_right_shift(char *str, parameters_t par)
 */
 
 
-int print_number_left_shift(char *str, parameters_t par)
+int print_number_left_shift(char *str, parameters_t *par)
 {
 	unsigned int n = 0, neg, neg2, i = _strlen(str);
 	char pad_char = ' ';
