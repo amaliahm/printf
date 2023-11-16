@@ -56,6 +56,8 @@ typedef struct specifier
 	int (*f)(va_list, parameters_t *);
 } specifier_t;
 
+int _printf(const char *format, ...);
+
 int _puts(char *str);
 int _putchar(int c);
 int print_char(va_list ap, parameters_t *p);
@@ -91,7 +93,5 @@ int print_number_left_shift(char *str, parameters_t *p);
 
 void init_parameters(parameters_t *p, va_list ap);
 void *get_precision(char *g, parameters_t *p, va_list ap);
-
-int _printf(const char *format, ...);
 
 #endif
